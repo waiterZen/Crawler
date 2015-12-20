@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "eslint": "^1.10.3",
-    "eslint-config-aftership": "^1.6.0"
+    "eslint-config-aftership": "^1.6.0",
+    "mocha": "2.3.4"
   }
 }
