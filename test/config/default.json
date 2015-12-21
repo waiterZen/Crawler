@@ -1,0 +1,4 @@
+{
+    // this db only for test
+    "dbConfig": "mongodb://test_account:6Yqk4yDYyTLUuU@ds033255.mongolab.com:33255/currency_data"
+}
