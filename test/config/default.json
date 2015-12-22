@@ -1,4 +1,9 @@
 {
     // this db only for test
-    "dbConfig": "mongodb://test_account:6Yqk4yDYyTLUuU@ds033255.mongolab.com:33255/currency_data"
+    "dbConfig": "mongodb://test_account:6Yqk4yDYyTLUuU@ds033255.mongolab.com:33255/currency_data",
+    "beansTalkd":{
+        "host": "104.155.198.149", //"challenge.aftership.net",
+        "port": 11300,
+        "tubeName": "waiterZen"
+    }
 }
