@@ -14,7 +14,6 @@ describe('get currency data', function () {
     let converterInstance = new converter('HKD', 'USD');
 
     converterInstance.run().then(function (result) {
-      console.log(`get current rate:`,result);
       expect(result).not.to.be.null;
       expect(result.rate).to.be.above(0);
       done();

@@ -13,7 +13,7 @@ describe('test producerWorker', function () {
     const seed = {
       type: 'convert',
       payload:{
-        from: 'HKN',
+        from: 'HKD',
         to: 'USD'
       }
     };
