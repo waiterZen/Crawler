@@ -3,7 +3,7 @@
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 const expect = chai.expect;
-const converter = require('../lib/converter');
+const converter = require('../lib/currencyConverter');
 
 chai.use(chaiAsPromised);
 describe('get currency data', function () {
