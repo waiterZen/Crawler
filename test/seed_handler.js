@@ -3,13 +3,13 @@
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 const expect = chai.expect;
-const producerWorker = require('../lib/producer_worker');
+const seed_handler = require('../lib/seed_handler');
 
 chai.use(chaiAsPromised);
 describe('test producerWorker', function () {
   this.timeout(15000);
 
-  it('should can run producerWorker, and got jobId', function (done) {
+  it('should can run seed_handler, and got jobId', function (done) {
     const seed = {
       type: 'convert',
       payload: {
@@ -18,7 +18,7 @@ describe('test producerWorker', function () {
       }
     };
 
-    producerWorker.putSeed(seed).then(function (jobId) {
+    seed_handler.putSeed(seed).then(function (jobId) {
       console.log('got jobId:', jobId);
       expect(jobId).not.to.be.null;
       done();
