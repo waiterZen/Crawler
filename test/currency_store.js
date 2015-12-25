@@ -4,6 +4,7 @@ const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 const expect = chai.expect;
 const currency_store = require('../lib/currency_store');
+const assert = require('assert');
 
 chai.use(chaiAsPromised);
 describe('get dataStore', function () {
@@ -23,7 +24,9 @@ describe('get dataStore', function () {
   });
 
   it('should can throw Error with wrong data format', function (done) {
-    currency_store.save('abc').catch(function (error){
+    currency_store.save('abc').then(function(){
+      throw new Error("Expected rejected, it should not be fulfilled");
+    }).catch(function (error){
       expect(error).not.to.be.null;
       done();
     });
