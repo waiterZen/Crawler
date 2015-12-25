@@ -19,9 +19,9 @@ node producer_worker.js
 ```
 Will create a new seed.
 
-## node consumer_worker.js
+## run consumer worker
 ```
-node producer_worker.js 
+node consumer_worker.js
 ```
 Will get a job from beanstalkd and run job hanler.
 
