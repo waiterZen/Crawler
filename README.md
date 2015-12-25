@@ -8,18 +8,18 @@ XECrawler is for crawling rate value betweent two currenies from xe.com (Example
 ```
 npm install
 ```
-## run test case
+## Run test case
 ```
 npm test
 ```
 
-## run producer worker 
+## Run producer worker 
 ```
 node producer_worker.js 
 ```
 Will create a new seed.
 
-## run consumer worker
+## Run consumer worker
 ```
 node consumer_worker.js
 ```
