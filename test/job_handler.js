@@ -3,8 +3,8 @@
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 const expect = chai.expect;
-const JobHandler = require('../lib/job_handler');
-const producerWorker = require('../lib/producer_worker');
+const job_handler = require('../lib/job_handler');
+const seed_handler = require('../lib/seed_handler');
 
 
 chai.use(chaiAsPromised);
@@ -21,7 +21,7 @@ describe('test job_handler', function () {
       }
     };
 
-    producerWorker.putSeed(seed).then(function (jobId) {
+    seed_handler.putSeed(seed).then(function (jobId) {
       console.log('create new jobId:', jobId);
       done();
     });
@@ -29,7 +29,7 @@ describe('test job_handler', function () {
 
   it('should can run job_handler', function (done) {
     // set max_fulfil = 2, max_fail = 1, period = 10000ms to accelerate test.
-    const handler = new JobHandler(2, 1, 10000, 3000);
+    const handler = new job_handler(2, 1, 10000, 3000);
     // build pay_load for test;
     const pay_load = {from: 'HKD', to: 'USD'};
     handler.work(pay_load, function(result) {
