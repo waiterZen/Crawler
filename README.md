@@ -23,6 +23,6 @@ Will create a new seed.
 ```
 node consumer_worker.js
 ```
-Will get a job from beanstalkd and run job hanler.
+Will get a job from beanstalkd and run job handler.
 
 
