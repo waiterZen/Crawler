@@ -24,12 +24,11 @@ describe('get currency data', function () {
 
   it('expect throw error with wrong url', function (done) {
     let converter_instance = new converter('HKD', 'USD', 'http://news.ycombinator.com');
-    converter_instance.run().then(function(){
-      throw new Error("Expected rejected, it should not be fulfilled");
-    }).catch(function(e){
+    converter_instance.run().then(function () {
+      throw new Error('Expected rejected, it should not be fulfilled');
+    }).catch(function (e) {
       expect(new Error(e)).to.eql(new Error('can not get valid rate value'));
       done();
     });
   });
-
 });

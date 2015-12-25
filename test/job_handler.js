@@ -12,7 +12,7 @@ chai.use(chaiAsPromised);
 describe('test job_handler', function () {
   // the test would need more time. so set to 10 minutes
   this.timeout(600000);
-  before('add new job', function(done){
+  before('add new job', function (done) {
     const seed = {
       type: 'convert',
       payload: {
@@ -32,11 +32,10 @@ describe('test job_handler', function () {
     const handler = new job_handler(2, 1, 10000, 3000);
     // build pay_load for test;
     const pay_load = {from: 'HKD', to: 'USD'};
-    handler.work(pay_load, function(result) {
-      console.log(result,"finish");
+    handler.work(pay_load, function (result) {
+      console.log(result, 'finish');
       expect(result).to.equal('success');
       done();
     });
   });
-
 });

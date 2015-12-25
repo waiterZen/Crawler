@@ -15,5 +15,3 @@ seed_handler.putSeed(seed).then(function (jobId) {
 }).catch(function (e) {
   console.log('got error when produce seed:', e);
 });
-
-

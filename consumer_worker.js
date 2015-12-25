@@ -13,7 +13,7 @@ const Period = 60000;
 const RETRY = 3000;
 
 const options = {
-  id: 'worker:' +  require('crypto').randomBytes(Math.ceil(4)).toString('hex').slice(0,8),
+  id: 'worker:' + require('crypto').randomBytes(Math.ceil(4)).toString('hex').slice(0, 8),
   host: config.beansTalkd.host || '127.0.01',
   port: config.beansTalkd.port || 11300,
   handlers: {
@@ -26,11 +26,8 @@ const worker = new fivebean_worker(options);
 worker.start([TUBE_NAME]);
 
 // show event logs
-_.forEach(['error', 'close','started', 'stopped',  'info',  'warning',  'job.reserved', 'job.handled', 'job.deleted',  'job.buried'], function(event){
-  worker.on(event, function(info){
+_.forEach(['error', 'close', 'started', 'stopped', 'info', 'warning', 'job.reserved', 'job.handled', 'job.deleted', 'job.buried'], function (event) {
+  worker.on(event, function eventLog(info) {
     console.log(`Event ${event}:`, info ? info : '');
-  })
+  });
 });
-
-
-
