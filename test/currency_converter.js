@@ -8,8 +8,8 @@ const converter = require('../lib/currency_converter');
 chai.use(chai_as_promised);
 
 describe('get currency data', function () {
-  // it's slow when curl data in mainland China;
-  this.timeout(15000);
+  // it's may slow when curl data in mainland China;
+  this.timeout(50000);
 
   it('get new converter object', function (done) {
     let converter_instance = new converter('HKD', 'USD');

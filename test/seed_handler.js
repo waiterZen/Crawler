@@ -6,7 +6,7 @@ const expect = chai.expect;
 const seed_handler = require('../lib/seed_handler');
 
 chai.use(chaiAsPromised);
-describe('test producerWorker', function () {
+describe('test seed_handler', function () {
   this.timeout(15000);
 
   it('should can run seed_handler, and got jobId', function (done) {
